@@ -126,15 +126,6 @@ export const Sidebar = ({ isCollapsed, setIsCollapsed, isMobileOpen, setIsMobile
               </>
             )}
           </button>
-
-          {/* Logout */}
-          <button
-            onClick={logout}
-            className="flex items-center space-x-3 px-4 py-3 w-full rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-950/20 transition group"
-          >
-            <IoLogOutOutline className="text-xl flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
-            <span className={isCollapsed ? 'md:hidden' : ''}>Logout</span>
-          </button>
         </div>
       </aside>
     </>
