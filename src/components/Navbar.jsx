@@ -7,11 +7,12 @@ import {
   IoPersonCircleOutline, 
   IoSearchOutline, 
   IoWarningOutline, 
-  IoCheckmarkDoneCircleOutline 
+  IoCheckmarkDoneCircleOutline,
+  IoLogOutOutline
 } from 'react-icons/io5';
 
 export const Navbar = ({ isCollapsed, setIsMobileOpen }) => {
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
   const { vehicles, drivers } = useDepot();
   const [showNotifications, setShowNotifications] = useState(false);
   const [notifications, setNotifications] = useState([]);
@@ -169,6 +170,15 @@ export const Navbar = ({ isCollapsed, setIsMobileOpen }) => {
         </div>
 
         <div className="h-6 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
+
+        {/* Logout Button */}
+        <button
+          onClick={logout}
+          className="flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium text-rose-600 hover:bg-rose-100 dark:text-rose-300 dark:hover:bg-rose-950/20 transition"
+        >
+          <IoLogOutOutline className="text-2xl" />
+          <span className="hidden sm:inline">Logout</span>
+        </button>
 
         {/* User Card */}
         {currentUser && (
